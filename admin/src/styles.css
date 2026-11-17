@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Poppins", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #17161c;
+  --color-muted: #6b6873;
+  --color-line: #e8e5ea;
+  --color-panel: #f6f5f8;
+  --color-brand: #b4235a;
+  --color-brand-dark: #8e1a46;
+  --color-brand-soft: #fbeef3;
+}
+
+@layer base {
+  body { @apply bg-panel font-sans text-[15px] text-ink antialiased; }
+  h1, h2, h3 { @apply font-semibold tracking-tight; }
+  :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+  input, select, textarea { @apply text-[15px]; }
+}
+
+@utility input { @apply block w-full rounded-lg border border-line bg-white px-3.5 py-2.5 text-ink placeholder:text-muted/70 focus:border-ink focus:outline-none disabled:bg-panel; }
+@utility label { @apply mb-1.5 block text-[14px] font-medium text-ink/80; }
+@utility card { @apply rounded-xl border border-line bg-white; }
+
+@media print {
+  body { background: white; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  @page { size: A5; margin: 10mm; }
+}
+.print-only { display: none; }
+
+.admin-scroll { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.15) transparent; }

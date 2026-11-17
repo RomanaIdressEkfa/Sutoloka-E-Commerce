@@ -1,0 +1,87 @@
+{
+ "source": "Pexels (pexels.com/license \u2014 free for commercial use). Demo only: replace with your own product photos in the admin panel.",
+ "categories": {
+  "saree": [
+   "https://images.pexels.com/photos/12579923/pexels-photo-12579923.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/38590761/pexels-photo-38590761.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/4048043/pexels-photo-4048043.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/4048041/pexels-photo-4048041.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/24712813/pexels-photo-24712813.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/8489695/pexels-photo-8489695.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/38619315/pexels-photo-38619315.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "salwar-kameez": [
+   "https://images.pexels.com/photos/33824984/pexels-photo-33824984.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/20777176/pexels-photo-20777176.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/22064201/pexels-photo-22064201.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/20407198/pexels-photo-20407198.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/20407233/pexels-photo-20407233.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/33363057/pexels-photo-33363057.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/20382095/pexels-photo-20382095.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/34933700/pexels-photo-34933700.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "kurti": [
+   "https://images.pexels.com/photos/28213774/pexels-photo-28213774.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/35504998/pexels-photo-35504998.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/20702673/pexels-photo-20702673.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/8770996/pexels-photo-8770996.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/20702676/pexels-photo-20702676.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "panjabi": [
+   "https://images.pexels.com/photos/34423740/pexels-photo-34423740.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/34423747/pexels-photo-34423747.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/17901285/pexels-photo-17901285.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/26984682/pexels-photo-26984682.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/34423743/pexels-photo-34423743.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/17585738/pexels-photo-17585738.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "shirts": [
+   "https://images.pexels.com/photos/8973545/pexels-photo-8973545.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/19456412/pexels-photo-19456412.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/36904565/pexels-photo-36904565.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/8063387/pexels-photo-8063387.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/37816931/pexels-photo-37816931.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/37741919/pexels-photo-37741919.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "polo-tshirts": [
+   "https://images.pexels.com/photos/38434455/pexels-photo-38434455.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/5941537/pexels-photo-5941537.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/17984123/pexels-photo-17984123.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/39915419/pexels-photo-39915419.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/8422386/pexels-photo-8422386.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "pants": [
+   "https://images.pexels.com/photos/11492699/pexels-photo-11492699.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/30725121/pexels-photo-30725121.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/10220955/pexels-photo-10220955.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/33055634/pexels-photo-33055634.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "girls": [
+   "https://images.pexels.com/photos/27604247/pexels-photo-27604247.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/5560021/pexels-photo-5560021.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/6951779/pexels-photo-6951779.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/40717413/pexels-photo-40717413.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/38552883/pexels-photo-38552883.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "boys": [
+   "https://images.pexels.com/photos/30098750/pexels-photo-30098750.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/5560020/pexels-photo-5560020.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/15179150/pexels-photo-15179150.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/30690924/pexels-photo-30690924.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/15443075/pexels-photo-15443075.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ],
+  "bags": [
+   "https://images.pexels.com/photos/21897141/pexels-photo-21897141.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/21897151/pexels-photo-21897151.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/21897316/pexels-photo-21897316.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/21897149/pexels-photo-21897149.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/21897145/pexels-photo-21897145.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+   "https://images.pexels.com/photos/22432991/pexels-photo-22432991.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+  ]
+ },
+ "heroes": {
+  "women": "https://images.pexels.com/photos/12579923/pexels-photo-12579923.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+  "men": "https://images.pexels.com/photos/34423740/pexels-photo-34423740.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200",
+  "family": "https://images.pexels.com/photos/20777176/pexels-photo-20777176.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=900&h=1200"
+ }
+}

@@ -1,0 +1,8 @@
+node_modules/
+.wrangler/
+store/public/admin/
+store/public/assets/app.css
+.dev.vars
+**/.dev.vars
+.dev-credentials.md
+deploy.config.json

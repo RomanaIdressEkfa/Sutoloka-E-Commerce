@@ -1,0 +1,47 @@
+@import "tailwindcss";
+@source "./";
+@source "../public/assets/app.js";
+
+@theme {
+  --font-sans: "Poppins", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #17161c;
+  --color-muted: #6b6873;
+  --color-line: #ebe7ea;
+  --color-cream: #faf6f7;
+  --color-brand: #b4235a;
+  --color-brand-dark: #8e1a46;
+  --color-brand-soft: #fbeef3;
+  --color-sale: #d9480f;
+  --color-star: #f59f00;
+  --container-site: 1440px;
+}
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body { @apply bg-white font-sans text-[15px] leading-relaxed text-ink antialiased sm:text-base; }
+  h1, h2, h3 { @apply font-semibold tracking-tight text-ink; }
+  input, select, textarea { @apply text-base; }
+  :focus-visible { outline: 2px solid var(--color-brand); outline-offset: 2px; }
+}
+
+@utility wrap { @apply mx-auto w-full max-w-[1320px] px-4 sm:px-6 lg:px-8; }
+@utility btn { @apply inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-[15px] font-medium transition disabled:cursor-not-allowed disabled:opacity-50; }
+@utility btn-dark { @apply btn bg-ink text-white hover:bg-black; }
+@utility btn-brand { @apply btn bg-brand text-white hover:bg-brand-dark; }
+@utility btn-line { @apply btn border border-ink/15 bg-white text-ink hover:border-ink; }
+@utility field { @apply block w-full rounded-lg border border-line bg-white px-4 py-3 text-ink placeholder:text-muted/70 focus:border-ink focus:outline-none; }
+@utility label { @apply mb-1.5 block text-sm font-medium text-ink; }
+@utility chip { @apply inline-flex items-center rounded-full border border-line px-4 py-2 text-sm font-medium text-ink transition hover:border-ink; }
+@utility chip-on { @apply border-ink bg-ink text-white; }
+@utility opt { @apply min-w-12 rounded-lg border border-line px-4 py-2.5 text-sm font-medium transition hover:border-ink; }
+@utility no-scrollbar { scrollbar-width: none; &::-webkit-scrollbar { display: none; } }
+
+@layer components {
+  .opt[aria-pressed="true"] { @apply border-ink bg-ink text-white; }
+  .opt[data-out="true"] { @apply text-muted line-through opacity-60; }
+  .prose-page h2 { @apply mt-8 mb-3 text-2xl; }
+  .prose-page h3 { @apply mt-6 mb-2 text-xl; }
+  .prose-page h4 { @apply mt-5 mb-1.5 text-lg font-semibold; }
+  .prose-page p { @apply mb-3 text-[15px] leading-7 text-ink/80 sm:text-base; }
+  .prose-page ul { @apply mb-4 list-disc space-y-1.5 pl-6 text-ink/80; }
+}

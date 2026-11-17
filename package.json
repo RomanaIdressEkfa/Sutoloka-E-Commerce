@@ -1,0 +1,35 @@
+{
+  "name": "sutoloka-platform",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "db:reset": "node scripts/db.mjs reset --local",
+    "db:init:remote": "node scripts/db.mjs init --remote",
+    "build:store-css": "tailwindcss -i store/src/styles.css -o store/public/assets/app.css --minify",
+    "build:admin": "vite build --config admin/vite.config.ts",
+    "build": "npm run build:store-css && npm run build:admin",
+    "dev:store": "npm run build && wrangler dev -c store/wrangler.jsonc --port 8787 --persist-to .wrangler/state",
+    "typecheck": "tsc --noEmit -p .",
+    "deploy": "node scripts/deploy.mjs",
+    "seed:demo": "node scripts/build-demo-seed.mjs",
+    "dev": "npm run build && wrangler dev -c store/wrangler.jsonc --port 8787 --persist-to .wrangler/state"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261117.1",
+    "@tailwindcss/cli": "^4.3.5",
+    "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tailwindcss": "^4.3.5",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.8",
+    "wrangler": "^4.163.0"
+  },
+  "dependencies": {
+    "hono": "^4.13.19",
+    "lucide-react": "^1.73.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
+}
