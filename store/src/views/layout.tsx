@@ -31,6 +31,36 @@ export const Icon = {
   gift: (s = 20) => svg(<><rect x="3" y="8" width="18" height="13" rx="1.5" /><path d="M12 8v13M3 12h18M12 8S10 3 7.5 4.5 9 8 12 8Zm0 0s2-5 4.5-3.5S15 8 12 8Z" /></>, s),
 };
 
+/** Original hand-drawn style floral branch (line art). Decorative only. */
+export function Floral(props: { class?: string; flip?: boolean }) {
+  const petal = 'M0 0 C 9 -9 10 -24 0 -32 C -10 -24 -9 -9 0 0 Z';
+  const leaf = 'M0 0 C 9 -7 25 -8 38 0 C 25 8 9 7 0 0 Z M2 0 L 34 0';
+  const flower = (x: number, y: number, s: number, r = 0) => (
+    <g transform={`translate(${x} ${y}) rotate(${r}) scale(${s})`}>
+      {[0, 72, 144, 216, 288].map((a) => <path d={petal} transform={`rotate(${a})`} />)}
+      {[0, 72, 144, 216, 288].map((a) => <path d="M0 -6 L 0 -18" transform={`rotate(${a + 36})`} />)}
+      <circle r="5" /><circle r="2" />
+    </g>
+  );
+  const leafAt = (x: number, y: number, r: number, s = 1) => <path d={leaf} transform={`translate(${x} ${y}) rotate(${r}) scale(${s})`} />;
+  const bud = (x: number, y: number, r: number) => (
+    <g transform={`translate(${x} ${y}) rotate(${r})`}><path d="M0 0 C 6 -6 6 -16 0 -22 C -6 -16 -6 -6 0 0 Z" /><path d="M0 0 C -5 -4 -8 -9 -7 -13 M0 0 C 5 -4 8 -9 7 -13" /></g>
+  );
+  return (
+    <svg viewBox="0 0 320 300" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+      class={`pointer-events-none select-none ${props.flip ? '-scale-x-100' : ''} ${props.class || ''}`}>
+      <path d="M10 292 C 70 250 110 220 150 170 C 185 126 215 95 262 62" />
+      <path d="M150 170 C 140 140 132 112 118 88" />
+      <path d="M195 118 C 225 120 250 132 272 150" />
+      <path d="M95 228 C 80 205 62 192 40 186" />
+      {leafAt(60, 255, -40, 0.9)}{leafAt(110, 214, 210, 0.85)}{leafAt(132, 192, -55)}{leafAt(172, 142, 205, 0.9)}
+      {leafAt(212, 102, -35, 0.8)}{leafAt(126, 108, 250, 0.7)}{leafAt(240, 136, 20, 0.75)}{leafAt(62, 192, 190, 0.75)}
+      {flower(262, 62, 1, 10)}{flower(118, 86, 0.8, -15)}{flower(272, 152, 0.65, 25)}{flower(40, 186, 0.6, 5)}
+      {bud(228, 82, 30)}{bud(150, 135, -25)}{bud(80, 222, -60)}
+    </svg>
+  );
+}
+
 export function Logo(props: { name: string; bn?: string; class?: string; light?: boolean }) {
   return (
     <span class={`inline-flex items-center gap-2.5 ${props.class || ''}`}>
@@ -87,7 +117,7 @@ export function Layout(props: { ctx: Ctx; title?: string; description?: string; 
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
           <link rel="preconnect" href="https://images.unsplash.com" />
-          <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hind+Siliguri:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
           <link rel="stylesheet" href="/assets/app.css" />
           <script>{raw(`window.__STORE__=${JSON.stringify({ freeOver, loggedIn: !!customer, offers: settings.offers.enabled ? settings.offers.tiers : [] })};`)}</script>
         </head>

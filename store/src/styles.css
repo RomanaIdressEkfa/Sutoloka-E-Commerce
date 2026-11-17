@@ -4,6 +4,9 @@
 
 @theme {
   --font-sans: "Poppins", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, "Hind Siliguri", serif;
+  --color-sand: #fbf4ec;
+  --color-sand-line: #c4a689;
   --color-ink: #17161c;
   --color-muted: #6b6873;
   --color-line: #ebe7ea;

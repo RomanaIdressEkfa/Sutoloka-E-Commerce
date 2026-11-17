@@ -2,7 +2,7 @@
 import { raw } from 'hono/html';
 import { DISTRICTS, taka, STATUS_LABEL, type OrderStatus } from '../../../shared/bd';
 import { sized, type Category, type ProductCard, type Variant } from '../data';
-import { Layout, Grid, Rail, Price, Breadcrumbs, Icon, Stars, Countdown, type Ctx } from './layout';
+import { Layout, Grid, Rail, Price, Breadcrumbs, Icon, Stars, Countdown, Floral, type Ctx } from './layout';
 
 const json = (v: unknown) => raw(JSON.stringify(v).replace(/</g, '\\u003c'));
 
@@ -16,7 +16,7 @@ const swatch = (name: string) => COLOR_HEX[name.toLowerCase()] || '#cfc8cc';
 function SectionHead(props: { title: string; sub?: string; href?: string; link?: string; children?: any }) {
   return (
     <div class="mb-5 flex flex-wrap items-end justify-between gap-3 sm:mb-6">
-      <div><h2 class="text-2xl sm:text-[28px]">{props.title}</h2>{props.sub && <p class="mt-1 text-muted">{props.sub}</p>}</div>
+      <div><h2 class="font-display text-[28px] font-semibold text-[#2d2a26] sm:text-[34px]">{props.title}</h2>{props.sub && <p class="mt-1 text-muted">{props.sub}</p>}</div>
       <div class="flex items-center gap-4">{props.children}{props.href && <a href={props.href} class="text-[15px] font-medium underline-offset-4 hover:underline">{props.link || 'View all'} →</a>}</div>
     </div>
   );
@@ -31,36 +31,46 @@ export function Home(props: { ctx: Ctx; latest: ProductCard[]; best: ProductCard
   const top = categories.filter((c) => !c.parent_id && c.slug !== 'accessories').slice(0, 3);
   return (
     <Layout ctx={props.ctx} image={slides[0]?.image}>
-      {slides.length > 0 && (
-        <section class="relative" data-slider aria-roledescription="carousel" aria-label="Featured collections">
-          <div data-track class="no-scrollbar flex snap-x snap-mandatory overflow-x-auto scroll-smooth">
-            {slides.map((s, i) => (
-              <div class={`relative w-full shrink-0 snap-start ${['bg-[#f5ece6]', 'bg-[#ece9e4]', 'bg-[#f1e8ee]'][i % 3]}`} aria-roledescription="slide" aria-label={`${i + 1} of ${slides.length}`}>
-                <div class="wrap grid items-center gap-6 py-10 sm:py-12 md:grid-cols-[1.1fr_1fr] lg:gap-12">
-                  <div class="order-2 max-w-xl md:order-1">
-                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-brand">{settings.store.name} · New season</p>
-                    <h1 class="mt-3 text-4xl font-semibold leading-tight sm:text-5xl lg:text-[56px]">{s.title}</h1>
-                    <p class="mt-4 max-w-md text-base leading-7 text-ink/70 sm:text-lg">{s.subtitle}</p>
-                    <div class="mt-8 flex flex-wrap gap-3">
-                      <a href={s.link} class="btn-dark px-7">{s.button}</a>
-                      <a href="/sale" class="btn-line px-7">View offers</a>
-                    </div>
-                  </div>
-                  <div class="order-1 flex justify-center md:order-2 md:justify-end">
-                    <img src={sized(s.image, 720, 900)} alt="" width="720" height="900" fetchpriority={i === 0 ? 'high' : 'low'} loading={i === 0 ? 'eager' : 'lazy'}
-                      class="aspect-[4/5] w-full max-w-[260px] rounded-2xl object-cover shadow-xl shadow-black/10 sm:max-w-[320px] lg:max-w-[400px]" />
-                  </div>
+      {slides.length > 0 && (() => {
+        const s = slides[0];
+        const accents = slides.slice(1, 3).map((x) => x.image).filter(Boolean);
+        return (
+          <section class="relative overflow-hidden bg-sand">
+            <Floral class="absolute -left-16 -top-16 w-40 text-sand-line sm:w-52 lg:-left-20 lg:w-64" />
+            <Floral flip class="absolute -right-16 top-6 hidden w-72 text-sand-line md:block lg:w-[26rem]" />
+            <div class="wrap relative grid items-center gap-10 pb-28 pt-10 sm:pt-14 md:grid-cols-[1.15fr_1fr] md:pb-32 lg:gap-6">
+              <div class="max-w-xl">
+                <p class="text-sm font-semibold uppercase tracking-[0.22em] text-brand">{settings.store.name_bn || settings.store.name} · New season</p>
+                <h1 class="mt-4 font-display text-[40px] font-semibold leading-[1.08] text-[#2d2a26] sm:text-[52px] lg:text-[64px]">{s.title}</h1>
+                <p class="mt-5 max-w-md text-base leading-7 text-ink/65 sm:text-lg">{s.subtitle}</p>
+                <div class="mt-9 flex flex-wrap items-center gap-4">
+                  <a href={s.link} class="btn rounded-full bg-brand px-8 py-3.5 text-base text-white shadow-lg shadow-brand/25 hover:bg-brand-dark">{s.button}</a>
+                  <a href="/sale" class="group inline-flex items-center gap-3 text-[15px] font-medium text-ink/80 hover:text-ink">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-brand shadow-md transition group-hover:scale-105">{Icon.bolt(18)}</span>Today's offers
+                  </a>
                 </div>
               </div>
-            ))}
-          </div>
-          {slides.length > 1 && (
-            <div class="absolute inset-x-0 bottom-5 flex justify-center gap-2">
-              {slides.map((_, i) => <button data-dot={i} aria-label={`Show slide ${i + 1}`} class={`h-2 rounded-full bg-ink/25 transition-all aria-[current=true]:w-8 aria-[current=true]:bg-ink ${i === 0 ? 'w-8' : 'w-2'}`} aria-current={i === 0 ? 'true' : 'false'}></button>)}
+              <div class="relative mx-auto w-full max-w-[420px] md:mr-0">
+                <div class="relative mx-auto aspect-[4/5] w-[78%] overflow-hidden rounded-t-[999px] rounded-b-[40px] bg-[#e9573f] shadow-2xl shadow-brand/15 ring-8 ring-white/70">
+                  <img src={sized(s.image, 720, 900)} alt="" width="720" height="900" fetchpriority="high" class="h-full w-full object-cover" />
+                </div>
+                {accents[0] && <img src={sized(accents[0], 240, 300)} alt="" width="240" height="300" class="absolute -left-2 top-6 aspect-[4/5] w-[26%] rounded-full object-cover shadow-xl ring-4 ring-white sm:-left-6" />}
+                {accents[1] && <img src={sized(accents[1], 240, 300)} alt="" width="240" height="300" class="absolute -left-4 bottom-4 aspect-[4/5] w-[24%] rounded-full object-cover shadow-xl ring-4 ring-white sm:-left-10" />}
+                <svg viewBox="0 0 160 60" class="absolute -left-24 top-1/2 hidden w-32 text-sand-line lg:block" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M155 45 C 120 5 85 5 75 25 C 68 40 95 42 92 25 C 88 8 50 8 12 22" /><path d="M24 12 L 10 22 L 26 30" /></svg>
+              </div>
             </div>
-          )}
-        </section>
-      )}
+            <div class="absolute inset-x-0 bottom-0">
+              <div class="wrap">
+                <div class="relative -mb-px grid max-w-2xl grid-cols-3 gap-4 rounded-t-3xl bg-white px-6 py-5 sm:px-8">
+                  {[['64', 'Districts we deliver to'], ['7-day', 'Easy size exchange'], ['COD', 'Pay on delivery']].map(([n, l]) => (
+                    <div><p class="font-display text-2xl font-semibold text-[#2d2a26] sm:text-[32px]">{n}</p><p class="mt-1 text-xs text-muted sm:text-sm">{l}</p></div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })()}
 
       {tiers.length > 0 && (
         <section class="border-b border-line bg-brand-soft">
@@ -122,7 +132,7 @@ export function Home(props: { ctx: Ctx; latest: ProductCard[]; best: ProductCard
       </section>
 
       <section class="wrap mt-16">
-        <h2 class="mb-5 text-2xl sm:text-[28px]">Shop by budget</h2>
+        <h2 class="mb-5 font-display text-[28px] font-semibold text-[#2d2a26] sm:text-[34px]">Shop by budget</h2>
         <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[['Under ৳1,000', '/shop?max=999'], ['৳1,000 – ৳2,000', '/shop?min=1000&max=2000'], ['৳2,000 – ৳5,000', '/shop?min=2000&max=5000'], ['Premium ৳5,000+', '/shop?min=5000']].map(([l, h]) => (
             <a href={h} class="rounded-xl border border-line bg-white px-4 py-6 text-center text-base font-semibold transition hover:border-brand hover:text-brand">{l}</a>
